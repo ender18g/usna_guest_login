@@ -22,7 +22,7 @@ password = args.password
 def login(username,password):
   chrome_options = Options()
   chrome_options.add_argument('--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1')
-  chrome_options.add_argument("--headless")
+#  chrome_options.add_argument("--headless")
   chrome_options.add_argument("-disable-gpu")
   chrome_options.add_argument('--no-sandbox')
 #  chrome_driver = '/usr/lib/chromium-browser/chromedriver'
@@ -32,8 +32,14 @@ def login(username,password):
   time.sleep(4)
   driver.execute_script(f"$(':input',' [id$=weblogin_user]').val('{username}');")
   driver.execute_script(f"$(':input',' [id$=weblogin_password]').val('{password}');")
+  driver.execute_script(f"$(':input',' [id$=weblogin_visitor_accept_terms]').click();")
+
   driver.execute_script(f"$(':input',' [id$=weblogin_visitor_accept_terms]').prop('checked',true);")
+
+  time.sleep(2)
   driver.execute_script(f"$('form').submit();")
+  time.sleep(3)
+  driver.close()
   return 'completed logging in!'
 
 def internet_on():

@@ -5,6 +5,7 @@ This python script will automatically log you onto the USNA guest network.
 
 **setup the required packages:**
 ```
+git clone https://github.com/ender18g/usna_guest_login.git
 sudo apt install chromium-chromedriver
 python3 -m venv LoginVENV
 source LoginVENV/bin/activate

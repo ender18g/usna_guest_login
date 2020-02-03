@@ -22,11 +22,12 @@ python3 USNA_auto_login.py myguestusername myguestpassword
 
 I recommend setting up the script to run in Crontab at a set interval to keep your device online.
 If you add the below lines to your crontab file, the script will run at startup and every hour.  The output will be logged to log.txt
+
  **The directories will need to be adjusted**
 
 
-'''
+```
 sudo crontab -e
 @reboot /home/pi/LoginVENV/bin/python /home/pi/usna_guest_login/usna_guest_login.py myusername mypw >> /home/pi/log.txt
 0 * * * * /home/pi/LoginVENV/bin/python /home/pi/usna_guest_login/usna_guest_login.py myusername mypw >> /home/pi/log.txt
-'''
+```

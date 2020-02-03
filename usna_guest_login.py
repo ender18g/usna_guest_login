@@ -6,6 +6,7 @@ import sys
 import time
 import requests
 import argparse
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument("username", help="your guest username")
@@ -40,7 +41,7 @@ def login(username,password):
   driver.execute_script(f"$('form').submit();")
   time.sleep(5)
   driver.close()
-  return 'completed logging in!'
+  return f"{datetime.now()}: completed logging in!"
 
 def internet_on():
   try:  r = requests.get("https://www.google.com", timeout=4)
@@ -56,10 +57,10 @@ if __name__== "__main__":
     if attempts>10:
       break
     if (internet_on()):
-      print("internet is ON")
+      print(f"{datetime.now()}: internet is ON")
       break
     else:
-      print("internet is OFF")
+      print("{datetime.now()}: Attempting Login")
       try: print(login(username,password))
       except: print("error logging in")
     time.sleep(10)

@@ -13,7 +13,7 @@ cd usna_guest_login
 pip install -r requirements.txt
 ```
 
-**Run the script:**
+**Run the script: (replace the command with your username/password)**
 ```
 python3 USNA_auto_login.py myguestusername myguestpassword
 ```
@@ -23,7 +23,7 @@ python3 USNA_auto_login.py myguestusername myguestpassword
 I recommend setting up the script to run in Crontab at a set interval to keep your device online.
 If you add the below lines to your crontab file, the script will run at startup and every hour.  The output will be logged to log.txt
 
- **The directories will need to be adjusted**
+ **Open Crontab and add the following lines to the file.  (update directory paths/username/password)**
 
 
 ```

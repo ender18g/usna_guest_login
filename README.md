@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 **Run the script: (replace the command with your username/password)**
 ```
-python3 USNA_auto_login.py myguestusername myguestpassword
+python3 usna_guest_login.py myguestusername myguestpassword
 ```
 
 
